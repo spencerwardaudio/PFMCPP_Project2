@@ -16,7 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
+ int 
+ char
+ float
+ double
+ bool
+ void
+
  
  
  
@@ -57,9 +63,48 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
     
-    
+    int wheel = 3;
+    int window = 4;
+    int lights = 2;
+
+    char foo = 'a';
+    char bar = 'b';
+    char item = 'c';
+
+    float loudness1 = 1.0f;
+    float loudness2 = 0.5f;
+    float loudness3 = 0.3f;
+
+    double gallons = 1.1;
+    double litters = 0.4;
+    double ounces = 0.3;
+
+    bool sun = true;
+    bool rain = false;
+    bool snow = false;
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+    ignoreUnused(wheel);
+    ignoreUnused(window);
+    ignoreUnused(lights);
+
+    ignoreUnused(foo);
+    ignoreUnused(bar);
+    ignoreUnused(item);
+
+    ignoreUnused(loudness1);
+    ignoreUnused(loudness2);
+    ignoreUnused(loudness3);
+
+    ignoreUnused(gallons);
+    ignoreUnused(litters);
+    ignoreUnused(ounces);
+
+    ignoreUnused(sun);
+    ignoreUnused(rain);
+    ignoreUnused(snow);
+
 }
 /*
  10 functions
@@ -75,17 +120,38 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  1)
  */
 
+ void washACar(int typeOfCleaning = 0, int typeOfCar = 1)
+ {
+     ignoreUnused(typeOfCleaning, typeOfCar);
+ }
+
 /*
  2)
  */
+
+ int buyGas(double amountOfGas = 12.0, bool unleaded = true, char gasPumpLocation)
+ {
+     ignoreUnused(amountOfGas, unleaded, gasPumpLocation);
+
+     return {};
+ } 
 
 /*
  3)
  */
 
+ bool pressAKey(char keyPressed = 'k', float amountOfPressure = 1.5f, int device = 1)
+ {
+    ignoreUnused(keyPressed, amountOfPressure, device);
+
+    return {};
+ }
+
 /*
  4)
  */
+
+ char pluckAString()
 
 /*
  5)
