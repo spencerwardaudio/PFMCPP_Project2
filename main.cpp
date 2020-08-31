@@ -129,9 +129,9 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  2)
  */
 
- int buyGas(double amountOfGas = 12.0, bool unleaded = true, char gasPumpLocation)
+ int buyGas(double amountOfGas = 12.0, bool unleaded = true, char gasLocation = 'a')
  {
-     ignoreUnused(amountOfGas, unleaded, gasPumpLocation);
+     ignoreUnused(amountOfGas, unleaded, gasLocation);
 
      return {};
  } 
@@ -151,31 +151,72 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  4)
  */
 
- char pluckAString()
+ char pluckString(int numberOfStringsPlucked, char stringsPlucked)
+ {
+     ignoreUnused(numberOfStringsPlucked, stringsPlucked);
+
+     return{};
+ }
 
 /*
  5)
  */
 
+ int findABook(char genre, char author, char title)
+ {
+     ignoreUnused(genre, author, title);
+
+     return {};
+ }
+
 /*
  6)
  */
+
+ void makeACopy(bool color = false, float amountOfInk = 0.5f, int numberOfCopies = 1)
+ {
+     ignoreUnused(color, amountOfInk, numberOfCopies);
+ }
 
 /*
  7)
  */
 
+ bool takeAWalk(int pathToWalk = 0, double distanceToWalk = 1.0)
+ {
+     ignoreUnused(pathToWalk, distanceToWalk);
+
+     return {};
+ }
+
 /*
  8)
  */
+
+ void buyFish(float amountOfFish = 1.0f, int typeOfFish = 4, bool bones = false, int freshness = 1)
+ {
+     ignoreUnused(amountOfFish, typeOfFish, bones, freshness);
+ }
 
 /*
  9)
  */
 
+void bicycleMoves(int direction, double speed = 2.0, double acceleration = 0.0)
+{
+    ignoreUnused(direction, speed, acceleration);
+}
+
 /*
  10)
  */
+
+ bool readABook(char bookTitle, int numberOfPages, float angleOfSunlight = 45.0f, int placeToSit = 1)
+ {
+    ignoreUnused(bookTitle, numberOfPages, angleOfSunlight, placeToSit);
+
+    return {};
+ }
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -197,27 +238,57 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
+
+    washACar(0, 3);
     
     //2)
-    
+
+     auto boughtGas = buyGas(12.0, true, 'a');
+
     //3)
     
+     bool motionUpdate = pressAKey();
+
     //4)
+
+     char playGuitarString = pluckString(1, 'g');
+ 
     
     //5)
-    
-    //6)
+
+    int lookForItem = findABook('e', 'w', 'h');
+
+    // 6)
+
+     makeACopy(false, 1.0f);
     
     //7)
+
+     bool walk = takeAWalk(1 , 1.0);
+
     
     //8)
+
+     buyFish(1.5f, 3, false, 1);
     
     //9)
+
+    bicycleMoves(6, 3.0, 0.0);
     
     //10)
-    
-    
+
+     bool reading = readABook('f', 10, 50.0f, 2);
+
+
     ignoreUnused(carRented);
+    ignoreUnused(boughtGas);
+    ignoreUnused(motionUpdate);
+    ignoreUnused(playGuitarString);
+    ignoreUnused(lookForItem);
+    ignoreUnused(walk);
+    ignoreUnused(reading);
+
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
