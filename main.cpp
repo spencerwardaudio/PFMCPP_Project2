@@ -83,27 +83,7 @@ void variableDeclarations()
     bool rain = false;
     bool snow = false;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
-
-    ignoreUnused(wheel);
-    ignoreUnused(window);
-    ignoreUnused(lights);
-
-    ignoreUnused(foo);
-    ignoreUnused(bar);
-    ignoreUnused(item);
-
-    ignoreUnused(loudness1);
-    ignoreUnused(loudness2);
-    ignoreUnused(loudness3);
-
-    ignoreUnused(gallons);
-    ignoreUnused(litters);
-    ignoreUnused(ounces);
-
-    ignoreUnused(sun);
-    ignoreUnused(rain);
-    ignoreUnused(snow);
+    ignoreUnused(number, wheel, window, lights, foo, bar, item, loudness1, loudness2, loudness3, gallons, litters, ounces, sun, rain, snow); //passing each variable declared to the ignoreUnused() function
 
 }
 /*
@@ -280,14 +260,7 @@ int main()
      bool reading = readABook('f', 10, 50.0f, 2);
 
 
-    ignoreUnused(carRented);
-    ignoreUnused(boughtGas);
-    ignoreUnused(motionUpdate);
-    ignoreUnused(playGuitarString);
-    ignoreUnused(lookForItem);
-    ignoreUnused(walk);
-    ignoreUnused(reading);
-
+    ignoreUnused(carRented, boughtGas, motionUpdate, playGuitarString, lookForItem, walk, reading);
 
     std::cout << "good to go!" << std::endl;
     return 0;    
