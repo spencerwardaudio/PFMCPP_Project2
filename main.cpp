@@ -16,7 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
+ int 
+ char
+ float
+ double
+ bool
+ void
+
  
  
  
@@ -57,9 +63,28 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
     
+    int wheel = 3;
+    int window = 4;
+    int lights = 2;
+
+    char foo = 'a';
+    char bar = 'b';
+    char item = 'c';
+
+    float loudness1 = 1.0f;
+    float loudness2 = 0.5f;
+    float loudness3 = 0.3f;
+
+    double gallons = 1.1;
+    double litters = 0.4;
+    double ounces = 0.3;
+
+    bool sun = true;
+    bool rain = false;
+    bool snow = false;
     
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, wheel, window, lights, foo, bar, item, loudness1, loudness2, loudness3, gallons, litters, ounces, sun, rain, snow); //passing each variable declared to the ignoreUnused() function
+
 }
 /*
  10 functions
@@ -75,41 +100,103 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  1)
  */
 
+ void washACar(int typeOfCleaning = 0, int typeOfCar = 1)
+ {
+     ignoreUnused(typeOfCleaning, typeOfCar);
+ }
+
 /*
  2)
  */
+
+ int buyGas(double amountOfGas = 12.0, bool unleaded = true, char gasLocation = 'a')
+ {
+     ignoreUnused(amountOfGas, unleaded, gasLocation);
+
+     return {};
+ } 
 
 /*
  3)
  */
 
+ bool pressAKey(char keyPressed = 'k', float amountOfPressure = 1.5f, int device = 1)
+ {
+    ignoreUnused(keyPressed, amountOfPressure, device);
+
+    return {};
+ }
+
 /*
  4)
  */
+
+ char pluckString(int numberOfStringsPlucked, char stringsPlucked)
+ {
+     ignoreUnused(numberOfStringsPlucked, stringsPlucked);
+
+     return{};
+ }
 
 /*
  5)
  */
 
+ int findABook(char genre, char author, char title)
+ {
+     ignoreUnused(genre, author, title);
+
+     return {};
+ }
+
 /*
  6)
  */
+
+ void makeACopy(bool color = false, float amountOfInk = 0.5f, int numberOfCopies = 1)
+ {
+     ignoreUnused(color, amountOfInk, numberOfCopies);
+ }
 
 /*
  7)
  */
 
+ bool takeAWalk(int pathToWalk = 0, double distanceToWalk = 1.0)
+ {
+     ignoreUnused(pathToWalk, distanceToWalk);
+
+     return {};
+ }
+
 /*
  8)
  */
+
+ void buyFish(float amountOfFish = 1.0f, int typeOfFish = 4, bool bones = false, int freshness = 1)
+ {
+     ignoreUnused(amountOfFish, typeOfFish, bones, freshness);
+ }
 
 /*
  9)
  */
 
+void bicycleMoves(int direction, double speed = 2.0, double acceleration = 0.0)
+{
+    ignoreUnused(direction, speed, acceleration);
+}
+
 /*
  10)
  */
+
+ bool readABook(char bookTitle, int numberOfPages, float angleOfSunlight = 45.0f, int placeToSit = 1)
+ {
+    ignoreUnused(bookTitle, numberOfPages, angleOfSunlight, placeToSit);
+
+    return {};
+ }
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -131,27 +218,50 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
+
+    washACar(0, 3);
     
     //2)
-    
+
+     auto boughtGas = buyGas(12.0, true, 'a');
+
     //3)
     
+     bool motionUpdate = pressAKey();
+
     //4)
+
+     char playGuitarString = pluckString(1, 'g');
+ 
     
     //5)
-    
-    //6)
+
+    int lookForItem = findABook('e', 'w', 'h');
+
+    // 6)
+
+     makeACopy(false, 1.0f);
     
     //7)
+
+     bool walk = takeAWalk(1 , 1.0);
+
     
     //8)
+
+     buyFish(1.5f, 3, false, 1);
     
     //9)
+
+    bicycleMoves(6, 3.0, 0.0);
     
     //10)
-    
-    
-    ignoreUnused(carRented);
+
+     bool reading = readABook('f', 10, 50.0f, 2);
+
+
+    ignoreUnused(carRented, boughtGas, motionUpdate, playGuitarString, lookForItem, walk, reading);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
